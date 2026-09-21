@@ -27,5 +27,5 @@ models:
       +schema: silver
 
     gold:
-      +materialized: view
+      +materialized: table
       +schema: gold

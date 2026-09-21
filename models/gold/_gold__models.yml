@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_department
+    columns:
+      - name: department_id
+        data_tests:
+          - unique
+          - not_null
+  - name: dim_employees
+    columns:
+      - name: employee_key
+        data_tests:
+          - unique
+          - not_null
+      - name: is_current_record
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1, 0]
+                quote: false
