@@ -1,0 +1,20 @@
+# Make sure this name matches the "profile:" line in your dbt_project.yml
+people_analytics_dbt: 
+  target: "{{ env_var('PEOPLE_ANALYTICS_ENV', 'dev') }}"
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 18 for SQL Server'
+      server: "{{ env_var('SQLSERVER_HOST') }}"
+      port: "{{ env_var('SQLSERVER_PORT') | int }}"
+
+      
+      database: "{{ env_var('SQLSERVER_DB') }}"
+      schema: "{{ env_var('SQLSERVER_SCHEMA') }}"
+      # If using Windows Auth:
+      trusted_connection: true
+      # If using SQL Auth instead, uncomment these two lines and comment out trusted_connection:
+      # user: "{{ env_var('SQLSERVER_USER') }}"
+      # password: "{{ env_var('SQLSERVER_PASSWORD') }}"
+      encrypt: true
+      trust_cert: true

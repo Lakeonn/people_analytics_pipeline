@@ -1,0 +1,5 @@
+raw_data_dir: "data/raw"
+employees_file: "employees.csv"
+events_file: "events.csv"
+n_employees: 1000
+log_level: "INFO"

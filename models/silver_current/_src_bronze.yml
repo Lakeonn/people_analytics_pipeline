@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: people_analytics  
+    schema: bronze  
+    tables:
+      - name: employees # <-- Just the table name
+      - name: events    # <-- Just the table name

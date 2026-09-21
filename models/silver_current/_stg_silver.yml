@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: silver_current_employees
+    description: "Cleaned, current state of all active and inactive employees."
+    columns:
+      - name: employee_id
+        description: "The primary key for each employee record."
+        tests:
+          - unique
+          - not_null
+
+  - name: silver_current_events
+    description: "Cleaned records of each event. "
+    columns:
+      - name: event_id
+        description: "The primary key for each event record."
+        tests:
+          - unique
+          - not_null
